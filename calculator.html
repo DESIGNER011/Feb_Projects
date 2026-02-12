@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./js_app_css.css">
+</head>
+<body style="background-color: black">
+    
+    
+    
+        <h1 style="color: antiquewhite;">Calculator - Mini Project Using HTML, CSS, JS</h1>
+
+        <div class="calculator">
+        
+            <input id="input" type="text">
+            <div class="div1">    
+                <button onclick="abc(0)">0</button>
+                <button onclick="abc(4)">4</button>
+                <button onclick="abc(8)">8</button>
+                <button onclick="opr('+')">+</button>
+            </div>
+            <div class="div2">
+                <button onclick="abc(1)">1</button>
+                <button onclick="abc(5)">5</button>
+                <button onclick="abc(9)">9</button>
+                <button onclick="opr('-')">-</button>
+               
+            </div>
+            <div class="div3">
+                <button onclick="abc(2)">2</button>
+                <button onclick="abc(6)">6</button>
+                <button onclick="opr('=')">=</button>
+                <button onclick="opr('*')">*</button>
+                
+            </div>
+            <div class="div4">
+                <button onclick="abc(3)">3</button>
+                <button onclick="abc(7)">7</button>
+                <button onclick="clr()">Clr</button>
+                <button onclick="opr('/')">/</button>
+               
+    
+            </div>
+        </div>
+    
+    
+    
+    
+    <script>
+        let value1=""
+        let symbol=''
+        let num2=""
+        function abc(a)
+        {
+          value1=value1+a
+          document.getElementById("input").value=value1;
+        }
+        function clr()
+        {
+            value1=''
+            document.getElementById("input").value=value1;
+        }
+        function opr(x)
+        {
+            symbol=x;
+            num2=value1;
+            value1='';
+            document.getElementById("input").value=value1;
+        }
+        // function equal()
+        // {
+        //    document.getElementById('input').value=Number(value1)+Number(num2)
+        // }
+        function equal()
+        {
+            switch (symbol)
+            {
+                case "+":
+                    document.getElementById("input").value=Number(num2)+Number(value1)
+                    break;
+                case "-": 
+                    document.getElementById("input").value=Number(num2)-Number(value1)
+                    break;
+                case "*": 
+                    document.getElementById("input").value=Number(num2)*Number(value1)
+                    break; 
+                case "/":  
+                    document.getElementById("input").value=Number(num2)/Number(value1)
+                    break;     
+            }
+        }
+
+    </script>
+    
+
+    
+</body>
+</html>
